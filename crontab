@@ -1,0 +1,2 @@
+{{CLAMAV_SCAN_CRON_SCHEDULE}} root echo $(date) Running Clamav Scan >> /var/log/cron.log 2>&1 && clamscan --stdout -r -i /scan >> /var/log/cron.log 2>&1
+{{CLAMAV_UPDATE_CRON_SCHEDULE}} root echo $(date) Running Clamav Update >> /var/log/cron.log 2>&1 && freshclam >> /var/log/cron.log 2>&1

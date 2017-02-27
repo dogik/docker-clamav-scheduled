@@ -1,0 +1,19 @@
+machine:
+  services:
+    - docker
+
+test:
+  override:
+    - echo 'no tests yet'
+
+deployment:
+  update:
+    branch: [master, develop]
+    commands:
+      - docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD --email $DOCKER_HUB_EMAIL
+
+      - docker build -t docker.io/dogik/docker-clamav-scheduled .
+      - docker tag docker.io/dogik/docker-clamav-scheduled docker.io/dogik/docker-clamav-scheduled:${CIRCLE_SHA1}
+
+      - docker push docker.io/dogik/docker-clamav-scheduled
+      - docker push docker.io/dogik/docker-clamav-scheduled:${CIRCLE_SHA1}
