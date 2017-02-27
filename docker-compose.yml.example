@@ -1,7 +1,7 @@
 version: '2'
 services:
   docker-clamav-scheduled:
-    image: dogik/docker-clamav-scheduled
+    image: dogik/clamav-scheduled
     environment:
       - CLAMAV_SCAN_CRON_SCHEDULE="0 12 * * *"
       - CLAMAV_UPDATE_CRON_SCHEDULE="*/10 * * * *"

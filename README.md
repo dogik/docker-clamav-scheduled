@@ -7,7 +7,7 @@ Usage:
 		-e CLAMAV_SCAN_CRON_SCHEDULE="{cron timing}" \
 		-e CLAMAV_UPDATE_CRON_SCHEDULE="{cron timing}" \
 		-v {volume to scan}:/scan:ro 
-	dogik/docker-clamav-scheduled
+	dogik/clamav-scheduled
 
 eg.:
 
@@ -15,4 +15,4 @@ eg.:
 		-e CLAMAV_SCAN_CRON_SCHEDULE="0 12 * * *" \
 		-e CLAMAV_UPDATE_CRON_SCHEDULE="*/10 * * * *" \
 		-v /:/scan:ro 
-	dogik/docker-clamav-scheduled
+	dogik/clamav-scheduled
